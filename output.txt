@@ -1,2 +1,1 @@
-This is just a test code for input and output
-The input number is: 105
+NO
