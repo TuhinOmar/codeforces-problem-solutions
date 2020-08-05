@@ -21,15 +21,14 @@ int32_t main()
 	int t;
 	cin>>t;
 	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
+		int n,x,y,m=0;
+		cin>>n>>x;
+		for(int i=1;i<n;++i){
+			cin>>y;
+			if(y<x)m=max(m,x-y);
+			x=max(x,y);
 		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
+		cout<<ceil(log2(m+1))<<endl;
 	}
 
 	return 0;

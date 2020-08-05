@@ -10,6 +10,7 @@ using namespace std;
 
 //typedef long long int ll;
 
+
 int32_t main()
 {
 	IOS;
@@ -18,18 +19,20 @@ int32_t main()
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin>>t;
-	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
-		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
+	string s[1111];
+	int a[1111];
+	int n;
+	cin>>n;
+	map<string,int>ma,mb;
+	for(int i=0;i<n;++i){
+		cin>>s[i]>>a[i];
+		ma[s[i]]+=a[i];
+	}
+	int mx=-1e9;
+	for(auto&i:ma)mx=max(mx,i.second);
+	for(int i=0;i<n;++i){
+		mb[s[i]]+=a[i];
+		if(ma[s[i]]==mx&&mb[s[i]]>=mx)return cout<<s[i]<<endl,0;
 	}
 
 	return 0;

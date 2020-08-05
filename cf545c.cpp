@@ -10,6 +10,29 @@ using namespace std;
 
 //typedef long long int ll;
 
+int solve(){
+	int n;
+	cin>>n;
+	vector<pair<int,int>>a(n);
+	for(int i=0;i<n;++i){
+		int x,y;
+		cin>>x>>y;
+		a[i].first=x;
+		a[i].second=y;
+	}
+	int result=n>1?2:1;
+	for(int i=1;i<n-1;++i){
+		if((a[i].first-a[i-1].first)>a[i].second){
+			++result;
+		}else if((a[i+1].first-a[i].first)>a[i].second){
+			++result;
+			a[i].first+=a[i].second;
+		}
+	}
+	return(result);
+}
+
+
 int32_t main()
 {
 	IOS;
@@ -18,19 +41,7 @@ int32_t main()
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin>>t;
-	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
-		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
-	}
+	cout<<solve();
 
 	return 0;
 }

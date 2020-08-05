@@ -18,19 +18,18 @@ int32_t main()
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin>>t;
-	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
-		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
+	int n,a,b,k,h;
+	cin>>n>>a>>b>>k;
+	vector<int>r;
+	while(n--){
+		cin>>h;
+		r.push_back((h+a+b-1)%(a+b)/a);
 	}
-
+	sort(r.begin(),r.end());
+	for(auto&i:r){
+		n+=i<=k;
+		k-=i;
+	}
+	cout<<n+1<<endl;
 	return 0;
 }

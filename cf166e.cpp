@@ -7,8 +7,10 @@ using namespace std;
 #define vet(a) for(auto&i:a)cout<<i<<" "
 #define out(a) cout<<a<<endl
 #define int long long int
+#define mod 1000000007;
 
 //typedef long long int ll;
+
 
 int32_t main()
 {
@@ -18,19 +20,15 @@ int32_t main()
 	freopen("output.txt","w",stdout);
 	#endif
 
-	int t;
-	cin>>t;
-	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
-		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
+	int n;
+	cin>>n;
+	int f[n];
+	f[0]=1;
+	f[1]=0;
+	for(int i=2;i<=n;++i){
+		f[i]=(2*f[i-1]+3*f[i-2])%mod;
 	}
+	cout<<f[n];
 
 	return 0;
 }

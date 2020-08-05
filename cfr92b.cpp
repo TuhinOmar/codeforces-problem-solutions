@@ -10,6 +10,24 @@ using namespace std;
 
 //typedef long long int ll;
 
+int n,k,z;
+int a[100005];
+
+void solve(){
+	cin>>n>>k>>z;
+	int sum=0,m=0;
+	for(int i=0;i<n;++i)cin>>a[i];
+	for(int i=0;i<k+1;++i)sum+=a[i];
+	for(int i=0;i<k;++i){
+		int tot=0;
+		for(int j=k;j>max(k-2*z,i+1);--j){
+			tot+=a[i+(k-j)%2]-a[j];
+			if(j%2!=k%2||j==2+i)m=max(m,tot);
+		}
+	}
+	cout<<sum+m<<endl;
+}
+
 int32_t main()
 {
 	IOS;
@@ -21,15 +39,7 @@ int32_t main()
 	int t;
 	cin>>t;
 	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
-		}
-		for(int i=0;i<x;++i){
-			cout<<8;
-		}
-		cout<<endl;
+		solve();
 	}
 
 	return 0;

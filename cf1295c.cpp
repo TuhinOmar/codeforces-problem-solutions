@@ -21,15 +21,28 @@ int32_t main()
 	int t;
 	cin>>t;
 	while(t--){
-		int n;cin>>n;
-		int x=(n+3)/4;
-		for(int i=0;i<n-x;++i){
-			cout<<9;
+		string s,t;
+		cin>>s>>t;
+		int a{1},i{},j{};
+		vector<vector<int>>F(26);
+
+		for(auto&c:s){
+			F[c-'a'].push_back(++i);
 		}
-		for(int i=0;i<x;++i){
-			cout<<8;
+		for(auto&c:t){
+			auto&f=F[c-'a'];
+			auto it=lower_bound(f.begin(),f.end(),j);
+			if(it==f.end()){
+				++a;
+				it=lower_bound(f.begin(),f.end(),0);
+				if(it==f.end()){
+					a=-1;
+					break;
+				}
+			}
+			j=(*it)+1;
 		}
-		cout<<endl;
+		cout<<a<<endl;
 	}
 
 	return 0;
