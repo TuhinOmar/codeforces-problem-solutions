@@ -15,6 +15,16 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	int t,n,k;cin>>t;
+	while(t--){
+		cin>>n>>k;
+		if(k%3!=0){
+			cout<<(n%3?"Alice":"Bob")<<endl;
+		}else{
+			cout<<((n%(k+1)%3||n%(k+1)==k)?"Alice":"Bob")<<endl;
+		}
+	}
+
 	return 0;
 }

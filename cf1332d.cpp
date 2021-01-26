@@ -8,6 +8,8 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+int k;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +17,9 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>k;
+	cout<<"3 2"<<endl<<"262143 "<<k<<endl<<"131072 262143"<<endl<<"0 "<<k;
+
 	return 0;
 }

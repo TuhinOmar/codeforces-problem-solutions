@@ -15,6 +15,16 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
+
+	vector<int>arr={3,1,2,4};
+	auto it1=arr.begin()+1;
+	auto it2=arr.end();
+	//cout<<it1<<it2<<endl;
+	cout<<*(it1+1)<<" "<<*(it2-2)<<endl;
+	rotate(arr.begin(),it1,it1+1);
+	for(int i=0;i<arr.size();++i){
+		cout<<arr[i]<<" ";
+	}
 	
 	return 0;
 }

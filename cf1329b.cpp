@@ -15,6 +15,18 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	int t;
+	cin>>t;
+	while(t--){
+		int d,mod;
+		ll ans=1;
+		cin>>d>>mod;
+		for(int i=0;(1<<i)<=d;++i){
+			ans=(ans*(min(d+1,(1<<(i+1)))-(1<<i)+1))%mod;
+		}
+		cout<<(ans-1+mod)%mod<<endl;
+	}
+
 	return 0;
 }

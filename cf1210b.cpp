@@ -8,6 +8,11 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+int n,b[7005],i,j;
+ll ans,a[7005];
+bool v[7005];
+map<ll,int>m;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +20,24 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>n;
+	for(i=1;i<=n;++i){
+		cin>>a[i];
+		++m[a[i]];
+	}
+	for(i=1;i<=n;++i)cin>>b[i];
+	for(i=1;i<=n;++i){
+		if(m[a[i]]>1){
+			ans+=b[i];
+			v[i]=1;
+		}
+	}
+	for(i=1;i<=n;++i)if(m[a[i]]==1)for(j=1;j<=n;++j)if((a[i]&a[j])==a[i]&&v[j]){
+		ans+=b[i];
+		break;
+	}
+	cout<<ans;
+
 	return 0;
 }

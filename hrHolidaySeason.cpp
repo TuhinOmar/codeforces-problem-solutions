@@ -8,6 +8,9 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+int n;
+string x;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +18,14 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>n;
+	cin>>x;
+	int cnt=0;
+	for(int i=0;i<n-3;++i){
+		if((x[i]==x[i+2])&&(x[i+1]==x[i+3]))++cnt;
+	}
+	cout<<cnt<<endl;
+
 	return 0;
 }

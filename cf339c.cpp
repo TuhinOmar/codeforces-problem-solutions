@@ -8,6 +8,16 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+int i,m,q[1024];
+string s;
+
+int r(int n,int d){
+	for(int&w=q[n]=d+1;n<=m&&w<11;++w){
+		if(w!=q[n-1]&&s[w-1]-'0'&&r(n+1,w-d))return 1;
+	}
+	return n>m;
+}
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +25,10 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>s>>m;
+	cout<<(r(1,0)?"YES":"NO")<<endl;
+	for(;q[m+1]&&i<m;cout<<q[++i]<<" ");
+
 	return 0;
 }

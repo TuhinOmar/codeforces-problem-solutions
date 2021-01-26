@@ -15,6 +15,16 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
+
+	int t;
+	cin>>t;
+	while(t--){
+		string s;
+		cin>>s;
+		int m=s[0]-'0'-1;
+		int len=s.size();
+		cout<<(m*10+len*(len+1)/2)<<endl;
+	}
 	
 	return 0;
 }

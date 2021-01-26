@@ -8,6 +8,9 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+ll mod=998244353;
+int64_t i=2,a,n;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +18,10 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
+
+	cin>>n;
+	for(a=n;i<=n;++i)a=(a-1)*i%mod;
+	cout<<a;
 	
 	return 0;
 }

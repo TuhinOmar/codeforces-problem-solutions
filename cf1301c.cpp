@@ -15,6 +15,15 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
+
+	int t;
+	cin>>t;
+	while(t--){
+		ll n,m;
+		cin>>n>>m;
+		ll k=(n-m)/(m+1);
+		cout<<(n*(n+1)/2-k*(k+1)*(m+1-(n-m)%(m+1))/2-(k+1)*(k+2)*((n-m)%(m+1))/2)<<endl;
+	}
 	
 	return 0;
 }

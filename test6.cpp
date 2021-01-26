@@ -15,6 +15,7 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cout<<(-5%3);
 	return 0;
 }

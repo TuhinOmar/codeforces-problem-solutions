@@ -7,6 +7,10 @@ using namespace std;
 #define vet(a) for(auto&i:a)cout<<i<<" "
 #define out(a) cout<<a<<endl
 #define ll long long int
+#define mod 1000000007
+
+ll n,m;
+ll f[110000]={0,1};
 
 int32_t main()
 {
@@ -15,6 +19,9 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	for(int i=2;i<110000;++i)f[i]=(f[i-1]+f[i-2])%mod;
+	cin>>n>>m;
+	cout<<2*(f[n+1]+f[m+1]-1)%mod;	
 	return 0;
 }

@@ -8,6 +8,9 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+const int N=21;
+ll f[N];
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +18,18 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
+
+	int n;
+	cin>>n;
+	f[0]=1;
+	for(int i=1;i<N;++i){
+		f[i]=f[i-1]*i;
+	}
+	ll ans=f[n]/f[n/2]/f[n/2];
+	ans=ans*f[n/2-1];
+	ans=ans*f[n/2-1];
+	ans/=2;
+	cout<<ans<<endl;
 	
 	return 0;
 }

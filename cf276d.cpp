@@ -8,6 +8,8 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+ll l,r,c,ans=1;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +17,13 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>l>>r;
+	c=l^r;
+	while(ans<=c){
+		ans<<=1;
+	}
+	cout<<ans-1;
+
 	return 0;
 }

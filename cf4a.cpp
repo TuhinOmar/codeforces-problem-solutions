@@ -15,6 +15,11 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	int w;
+	cin>>w;
+	if(w>3&&!(w%2))cout<<"YES";
+	else cout<<"NO";
+
 	return 0;
 }

@@ -15,6 +15,20 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	int n,m;cin>>n>>m;
+	vector<int>a(101);
+	for(int i=0;i<n;++i){
+		int t;cin>>t;
+		int s=t,cnt=0;
+		for(int j=1;j<101;++j){
+			int z=min(a[j],(m-s)/j);
+			s+=z*j;
+			cnt+=z;
+		}
+		cout<<(i-cnt)<<" ";
+		++a[t];
+	}
+
 	return 0;
 }

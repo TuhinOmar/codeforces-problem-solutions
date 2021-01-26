@@ -8,6 +8,9 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+int t,n,dp,kul;
+string s;
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +18,16 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	cin>>t;
+	while(t--){
+		cin>>n>>s,dp=0,kul=1;
+		for(int i=1;i<n;++i){
+			if(s[i]!=s[i-1])++kul;
+			else dp=min(dp+1,kul);
+		}
+		cout<<(kul+dp+1)/2<<endl;
+	}
+
 	return 0;
 }

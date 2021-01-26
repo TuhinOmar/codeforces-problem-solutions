@@ -15,6 +15,11 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	int n;
+	cin>>n;
+	if(n%2)cout<<"black";
+	else cout<<"white"<<endl<<1<<" "<<2;
+
 	return 0;
 }

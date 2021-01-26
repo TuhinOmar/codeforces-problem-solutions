@@ -8,6 +8,8 @@ using namespace std;
 #define out(a) cout<<a<<endl
 #define ll long long int
 
+
+
 int32_t main()
 {
 	IOS;
@@ -15,6 +17,19 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	vector<ll>v(1000000,1);
+	ll i,j;
+	for(i=2;i<=1000000;++i){
+		for(j=2*i;j<=1000000;j+=i){
+			v[j]+=i;
+		}
+	}
+	cin>>i;
+	while(i--){
+		cin>>j;
+		cout<<v[j]<<endl;
+	}
+
 	return 0;
 }

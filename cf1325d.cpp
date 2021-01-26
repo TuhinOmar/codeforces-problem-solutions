@@ -15,6 +15,17 @@ int32_t main()
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	
+
+	ll u,v;
+	cin>>u>>v;
+	if(u>v){cout<<-1<<endl;return 0;}
+	if(v==0){cout<<0<<endl;return 0;}
+	v-=u;
+	if(v==0){cout<<1<<endl<<u;return 0;}
+	if(v%2){cout<<-1<<endl;return 0;}
+	v>>=1;
+	if(v&u){cout<<3<<endl<<v<<" "<<v<<" "<<u<<endl;return 0;}
+	else {cout<<2<<endl<<u+v<<" "<<v<<endl;return 0;}
+
 	return 0;
 }
