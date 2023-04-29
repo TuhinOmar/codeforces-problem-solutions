@@ -6,22 +6,18 @@ using namespace std;
 #define forn(i,n) for(int i=0;i<int(n);++i)
 #define vet(a) for(auto&i:a)cout<<i<<" "
 #define out(a) cout<<a<<endl
-#define int long long int
-
-//typedef long long int ll;
+#define lli long long int
 
 int32_t main()
 {
 	IOS;
-	#ifndef ONLINE_JUDGE
+	/*#ifndef ONLINE_JUDGE
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
-	#endif
+	#endif*/
 
-	cout<<"This is just a test code for input and output"<<endl;
-	int a;
-	cin>>a;
-	cout<<"The input number is: "<<a<<endl;
+	int x=-5;
+	cout<<x%3;
 
 	return 0;
 }
